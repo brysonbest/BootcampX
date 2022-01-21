@@ -7,17 +7,6 @@ const pool = new Pool({
   database: 'bootcampx'
 });
 
-let cohortName = '*';
-let maxResults = '*';
-if(process.argv.length >= 2) {
-  cohortName = process.argv[2];
-};
-
-if(process.argv.length >= 2) {
-  maxResults = process.argv[3];
-};
-
-
 pool.query(`
 SELECT students.id as student_id, students.name as name, cohorts.name as cohort
 FROM students
